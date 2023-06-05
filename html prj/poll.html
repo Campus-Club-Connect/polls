@@ -1,95 +1,101 @@
 <!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Polls</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="polls.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="poll.css" />
+  </head>
+  <body>
     <div class="navigation">
-        <div class="button1" id="polls-clubs">Polls (Clubs)</div>
-        <div class="button2" id="polls-president">Polls (President)</div>
+      <div class="button1" id="polls-clubs">Polls (Clubs)</div>
+      <div class="button2" id="polls-president" onclick="goToPresidentPage()">
+        Polls (President)
+      </div>
     </div>
     <div class="leaderboard">
-        <div class="box1" id="leader-boards">
-            <span class="lb">Leader Boards</span>
+      <div class="box1" id="leader-boards">
+        <span class="lb">Leader Boards</span>
+      </div>
+      <div class="box2">
+        <img src="1st.png" alt="badge" class="badge" />
+        <div class="club-name-container">
+          <span class="club-name">Space Club</span>
         </div>
-        <div class="box2">
-            <div class="club-name-container">
-                <span class="club-name">Space Club</span>
-            </div>
+      </div>
+      <div class="box3">
+        <img src="2nd.png" alt="badge" class="badge" />
+        <div class="club-name-container">
+          <span class="club-name">VR Club</span>
         </div>
-        <div class="box3">
-            <div class="club-name-container">
-                <span class="club-name">VR Club</span>
-            </div>
+      </div>
+      <div class="box4">
+        <img src="3rd.png" alt="badge" class="badge" />
+        <div class="club-name-container">
+          <span class="club-name">Game Club</span>
         </div>
-        <div class="box4">
-            <div class="club-name-container">
-                <span class="club-name">Game Club</span>
-            </div>
-        </div>
+      </div>
     </div>
     <div class="post">
-        <div class="profile-box">
-            <img src="profile.png" alt="Profile Image" class="profile-image">
-            <div class="profile-info">
-              <div class="username">Your Username</div>
-              <div class="role">President</div>
-              <div class="duration">5 Hrs</div>
-            </div>
-          </div>
+      <div class="profile-box">
+        <img src="profile.png" alt="Profile Image" class="profile-image" />
+        <div class="profile-info">
+          <div class="username">Your Username</div>
+          <div class="role">President</div>
+          <div class="duration">5 Hrs</div>
+        </div>
+      </div>
 
-          <div class="image-box">
-            <img src="spaceclub.png" alt="Image" class="image">
+      <div class="image-box">
+        <img src="spaceclub.png" alt="Image" class="image" />
+      </div>
+
+      <div class="voting">
+        <div class="button-container">
+          <div id="likeButton" class="button like-button"></div>
+          <div class="percentage-bar-container">
+            <div class="like-percentage" id="likePercentage"></div>
+            <div id="percentageBar" class="percentage-bar"></div>
+            <div class="dislike-percentage" id="dislikePercentage"></div>
           </div>
-          
-        
-          <div class="button-container">
-            <div id="likeButton" class="button like-button"></div>
-            <div class="percentage-bar-container">
-                <div class="like-percentage" id="likePercentage"></div>
-                <div id="percentageBar" class="percentage-bar"></div>
-                <div class="dislike-percentage" id="dislikePercentage"></div>
-            </div>
-            <div id="dislikeButton" class="button dislike-button"></div>
+          <div id="dislikeButton" class="button dislike-button"></div>
         </div>
         <div id="voteCount" class="vote-count">Votes: 0</div>
-          
-          
+      </div>
     </div>
-    <div class="proposal">
-        <div class="box1" id="leader-boards">
-            <span class="lb">Propose your Ideas!</span>
+    <form class="proposal" method="POST">
+      <div class="ideas" id="ideas">
+        <span class="lb">Propose your Ideas!</span>
+      </div>
+      <div class="userData">
+        <div class="input-container">
+          <input type="text" id="name" required placeholder="Name" />
+          <label for="input-text"></label>
         </div>
         <div class="input-container">
-            <input type="text" id="input-text" required placeholder="Name" />
-            <label for="input-text"></label>
+          <input type="email" id="email" required placeholder="Email" />
+          <label for="input-text"></label>
         </div>
         <div class="input-container">
-            <input type="text" id="input-text" required placeholder="Email" />
-            <label for="input-text"></label>
+          <input type="text" id="club-name" required placeholder="Club name" />
+          <label for="input-text"></label>
         </div>
-        <div class="input-container">
-            <input type="text" id="input-text" required placeholder="Club name" />
-            <label for="input-text"></label>
-    </div>
-    <div class="drop-box" id="dropBox">
-        <div class="textbox">
-            <span>Drop a file here or click here to select files</span>
-        </div>
-    </div>
-    <!-- <div class="post" style="top: 871px;"></div> -->
-    
+      </div>
 
-        <input type="submit" value="Submit" class="submit-button">
+      <div class="drop-box" id="dropBox">
+        <div class="textbox">
+          <span>Drop a file here or click here to select files</span>
+        </div>
+      </div>
+      <input type="submit" value="Submit" class="submit-button" />
+    </form>
 
     <script src="poll.js"></script>
-</body>
+  </body>
 </html>
-
-    

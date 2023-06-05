@@ -1,0 +1,129 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>President</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="president.css" />
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="button1" id="polls-clubs" onclick="goToClubsPage()">
+        Polls (Clubs)
+      </div>
+      <div class="button2" id="polls-president">Polls (President)</div>
+    </div>
+
+    <div class="leaderboard">
+      <div class="box1" id="leader-boards">
+        <span class="lb">Leader Boards</span>
+      </div>
+      <div class="box2">
+        <img src="1st.png" alt="badge" class="badge" />
+        <div class="club-name-container">
+          <span class="club-name">Bill Dorji</span>
+        </div>
+      </div>
+      <div class="box3">
+        <img src="2nd.png" alt="badge" class="badge" />
+        <div class="club-name-container">
+          <span class="club-name">Kinchap Raiden</span>
+        </div>
+      </div>
+      <div class="box4">
+        <img src="3rd.png" alt="badge" class="badge" />
+        <div class="club-name-container">
+          <span class="club-name">Kali Wangdi</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="title-box">
+        <div class="President-Candidacy">President Candidacy</div>
+        <div class="duration">5 Hrs</div>
+      </div>
+
+      <div class="candidates">
+        <div class="card">
+          <img src="billDorji.png" alt="Image 1" class="card-image" />
+          <p class="card-text">bill Dorji</p>
+          <div class="vote" onclick="Vote(candidate4)" id="candidate1">
+            <img src="vote.png" alt="Vote 1" class="vote-image" />
+          </div>
+        </div>
+        <div class="card">
+          <img src="chimiDorji.png" alt="Image 2" class="card-image" />
+          <p class="card-text">chimi Dorji</p>
+          <div class="vote" onclick="Vote(candidate2)" id="candidate2">
+            <img src="vote.png" alt="Vote 2" class="vote-image" />
+          </div>
+        </div>
+        <div class="card">
+          <img src="kaliDorji.png" alt="Image 3" class="card-image" />
+          <p class="card-text">kali Dorji</p>
+          <div class="vote" onclick="Vote(candidate3)" id="candidate3">
+            <img src="vote.png" alt="Vote 3" class="vote-image" />
+          </div>
+        </div>
+        <div class="card">
+          <img src="kinchapDorji.png" alt="Image 4" class="card-image" />
+          <p class="card-text">kinchap Dorji</p>
+          <div class="vote" onclick="Vote(candidate4)" id="candidate4">
+            <img src="vote.png" alt="Vote 4" class="vote-image" />
+          </div>
+        </div>
+      </div>
+
+      <div class="voting">
+        <div class="percentage-bar-container">
+          <div
+            class="percentage-bar"></div>
+          <div class="percentage-label">Not Voted</div>
+        </div>
+      </div>
+    </div>
+      <div class="voting">
+        <div class="button-container">
+          <div id="likeButton" class="button like-button"></div>
+          <div class="percentage-bar-container">
+            <div class="like-percentage" id="likePercentage"></div>
+            <div id="percentageBar" class="percentage-bar"></div>
+            <div class="dislike-percentage" id="dislikePercentage"></div>
+          </div>
+          <div id="dislikeButton" class="button dislike-button"></div>
+        </div>
+        <div id="voteCount" class="vote-count">Votes: 0</div>
+      </div>
+    </div>
+
+    <div class="proposal">
+      <div class="presidency" id="presidency">
+        <span class="presidency-text">Try out for Presidency?</span>
+      </div>
+      <div class="input-container">
+        <input type="text" id="input-text" required placeholder="First Name" />
+        <label for="input-text"></label>
+      </div>
+      <div class="input-container">
+        <input type="text" id="input-text" required placeholder="Last Name" />
+        <label for="input-text"></label>
+      </div>
+      <div class="drop-box" id="dropBox">
+        <div class="textbox">
+          <span>Drop your image or click here to select files</span>
+        </div>
+      </div>
+      <!-- <div class="post" style="top: 871px;"></div> -->
+      <input type="submit" value="Submit" class="submit-button" />
+    </div>
+
+    <script src="president.js"></script>
+  </body>
+</html>
